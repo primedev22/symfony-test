@@ -1,11 +1,10 @@
-<html>
-    <head>
-        <title>Edit store</title>
-    </head>
-    <body>
-        {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <input type="submit" />
-        {{ form_end(form) }}
-    </body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Store{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" class="btn btn-success"/>
+    {{ form_end(form) }}
+{% endblock %}

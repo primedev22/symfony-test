@@ -1,22 +1,29 @@
-<html>
-    <head>
-        <title>List of stores</title>
-    </head>
-    <body>
-        <table id="data">
-            {% for item in data %}
-                <tr>
-                    <td>{{item.id}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.latitude}}</td>
-                    <td>{{item.longitude}}</td>
-                    <td>{{item.employee}}</td>
-                    <td>
-                        <a href="/edit/{{item.id}}">Edit</a> | <a href="/delete/{{item.id}}">Delete</a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </table>
-        <a href="/add">Add new store</a>
-    </body>
-</html>
+{% extends 'base.html.twig' %}
+
+{% block title %}List of stores{% endblock %}
+
+{% block body %}
+    <table id="data" class="table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Employee</th>
+            <th></th>
+        </tr>
+        {% for item in data %}
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.latitude}}</td>
+                <td>{{item.longitude}}</td>
+                <td>{{item.employee}}</td>
+                <td>
+                    <a href="/edit/{{item.id}}">Edit</a> | <a href="/delete/{{item.id}}">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/add">Add new store</a>
+{% endblock %}
